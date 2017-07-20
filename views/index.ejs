@@ -9,32 +9,34 @@
   <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-  <h1>Hello, EJS!</h1>
-  <form action="/person" method="POST">
-    <ul>
-      <li>
-        <label for="firstname">Firstname</label>
-        <input type="text" name="firstname" id="firstname">
-      </li>
-      <li>
-        <label for="lastname">Lastname</label>
-        <input type="text" name="lastname" id="lastname">
-      </li>
-      <li>
-        <input type="submit" value="submit">
-      </li>
-    </ul>
-  </form>
-  <script src="/assets/js/jquery.min.js"></script>
-  <script src="/assets/js/bootstrap.min.js"></script>
-  <script>
-    $.ajax({
-      type: 'POST',
-      url: '/personjson',
-      data: JSON.stringify({ firstname: 'Victor', lastname: 'Afolabi' }),
-      datatype: 'json',
-      contentType: 'application/json'
-    });
-  </script>
+  <div class="container">
+    <h1>Hello, EJS!</h1>
+    <form action="/user" method="POST">
+      <ul>
+        <li>
+          <label for="firstname">Firstname</label>
+          <input type="text" name="firstname" id="firstname">
+        </li>
+        <li>
+          <label for="lastname">Lastname</label>
+          <input type="text" name="lastname" id="lastname">
+        </li>
+        <li>
+          <input type="submit" value="submit" class="btn btn-default">
+        </li>
+      </ul>
+    </form>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <script>
+      $.ajax({
+        type: 'POST',
+        url: '/user',
+        data: JSON.stringify({ firstname: 'Victor', lastname: 'Afolabi' }),
+        datatype: 'json',
+        contentType: 'application/json'
+      });
+  </script> 
+ </div>
 </body>
 </html>
