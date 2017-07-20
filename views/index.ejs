@@ -5,9 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>EJS Template Engine</title>
-  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
   <h1>Hello, EJS!</h1>
+  <form action="/person" method="POST">
+    <ul>
+      <li>
+        <label for="firstname">Firstname</label>
+        <input type="text" name="firstname" id="firstname">
+      </li>
+      <li>
+        <label for="lastname">Lastname</label>
+        <input type="text" name="lastname" id="lastname">
+      </li>
+      <li>
+        <input type="submit" value="submit">
+      </li>
+    </ul>
+  </form>
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/bootstrap.min.js"></script>
+  <script>
+    $.ajax({
+      type: 'POST',
+      url: '/personjson',
+      data: JSON.stringify({ firstname: 'Victor', lastname: 'Afolabi' }),
+      datatype: 'json',
+      contentType: 'application/json'
+    });
+  </script>
 </body>
 </html>
